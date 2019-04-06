@@ -1,6 +1,15 @@
+const scraper = require('./scraper')
+
+const URL = 'https://www.dealabs.com'
+
 // 'à la une'
 exports.getDeals = () => {
-    return 'getDeals'
+    try {
+        const html = scraper.getHTML(URL + '/')
+        // console.log(html)
+    } catch (e) {
+        return e.message
+    }
 }
 
 // 'hot'
@@ -12,4 +21,3 @@ exports.getHotDeals = () => {
 exports.getMostCommentedDeals = () => {
     return 'getMostCommentedDeals'
 }
-
