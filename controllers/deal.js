@@ -8,7 +8,7 @@ exports.index = (req, res, next) => {
         res.json({status: 500, message: err.message, data: null})
       } else {
         res.setHeader('Content-Type', 'application/json');
-        res.json(JSON.stringify({ "speech": data[0]['title'], "displayText": data[0]['title']}))
+        res.send(JSON.stringify({ "speech": data[0]['title'], "displayText": data[0]['title']}))
         // res.json({ status: 300, message: 'Success', data: data })
       }
     })
