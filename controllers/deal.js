@@ -1,8 +1,9 @@
 const dealabs = require('./../src/dealabs')
-const LIMIT = 3
+const DEFAULT_LIMIT = 3
 
 exports.index = (req, res, next) => {
-    dealabs.getDeals(LIMIT, (err, data) => {
+    let customLimit = typeof req.query.limit === 'undefined' ? DEFAULT_LIMIT : req.query.limit
+    dealabs.getDeals(customLimit, (err, data) => {
       if (err) {
         res.json({status: 500, message: err.message, data: null})
       } else {
@@ -12,7 +13,8 @@ exports.index = (req, res, next) => {
 }
 
 exports.getHotDeals = (req, res, next) => {
-  dealabs.getHotDeals(LIMIT, (err, data) => {
+  let customLimit = typeof req.query.limit === 'undefined' ? DEFAULT_LIMIT : req.query.limit
+  dealabs.getHotDeals(customLimit, (err, data) => {
     if (err) {
       res.json({ status: 500, message: err.message, data: null })
     } else {
@@ -22,7 +24,8 @@ exports.getHotDeals = (req, res, next) => {
 }
 
 exports.getMostCommentedDeals = (req, res, next) => {
-  dealabs.getMostCommentedDeals(LIMIT, (err, data) => {
+  let customLimit = typeof req.query.limit === 'undefined' ? DEFAULT_LIMIT : req.query.limit
+  dealabs.getMostCommentedDeals(customLimit, (err, data) => {
     if (err) {
       res.json({ status: 500, message: err.message, data: null })
     } else {
