@@ -1,8 +1,7 @@
 const https = require('https')
 
-exports.getHTML = (url) => {
+exports.getHTML = (url, callback) => {
     https.get(url, (res) => {
-
         let data = null
 
         res.on('data', (d) => {
@@ -10,10 +9,9 @@ exports.getHTML = (url) => {
         })
 
         res.on('end', () => {
-            console.log(data)
-            return data
+            callback(null, data)
         })
     }).on('error', (e) => {
-        return e.message
+        callback(e, null)
     })
 }

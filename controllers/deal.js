@@ -1,8 +1,11 @@
 const dealabs = require('./../src/dealabs')
+const LIMIT = 3
 
 exports.index = (req, res, next) => {
-    let data = dealabs.getDeals()
-    res.json(data)
+    dealabs.getDeals(LIMIT, (data) => {
+      res.json(data)
+    })
+    // res.json(data)
 }
 
 exports.getHotDeals = (req, res, next) => {
