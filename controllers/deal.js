@@ -3,7 +3,7 @@ const dealspeaker = require('./../src/dealspeaker')
 const DEFAULT_LIMIT = 1
 
 exports.index = (req, res, next) => {
-    let customLimit = typeof req.body.number === 'undefined' ? DEFAULT_LIMIT : req.body.number
+    let customLimit = typeof req.body.queryResult.parameters['number'] === 'undefined' ? DEFAULT_LIMIT : req.body.queryResult.parameters['number']
     dealabs.getDeals(customLimit, (err, data) => {
       let fulfillmentText = 'An error is occured'
       dealspeaker.convert(data, (fulfillmentText) => {
