@@ -9,9 +9,9 @@ exports.index = (req, res, next) => {
       dealspeaker.convert(data, (fulfillmentText) => {
 
         if (err) {
-          res.json({ status: 500, message: 'Error', 'fulfillmentText': err.message })
+          res.json({ fulfillmentText: err.message })
         } else {
-          res.json({ status: 300, message: 'Success', 'fulfillmentText': fulfillmentText })
+          res.json({ fulfillmentText: fulfillmentText })
         }
       })
     })
