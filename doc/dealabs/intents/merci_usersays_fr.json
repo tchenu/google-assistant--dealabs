@@ -1,0 +1,37 @@
+[
+  {
+    "id": "4e3785c7-c92a-479c-bf27-d1b7384b1770",
+    "data": [
+      {
+        "text": "Fin",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "6a89023a-a6ec-40a2-88e9-2df6b4fc66a2",
+    "data": [
+      {
+        "text": "Stop",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "51405605-3e1a-44a4-bfd3-3edcba0d68d1",
+    "data": [
+      {
+        "text": "Merci",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]
