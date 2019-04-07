@@ -2,18 +2,31 @@ const dealabs = require('./../src/dealabs')
 const LIMIT = 3
 
 exports.index = (req, res, next) => {
-    dealabs.getDeals(LIMIT, (data) => {
-      res.json(data)
+    dealabs.getDeals(LIMIT, (err, data) => {
+      if (err) {
+        res.json({status: 500, message: err.message, data: null})
+      } else {
+        res.json({ status: 300, message: 'Success', data: data })
+      }
     })
-    // res.json(data)
 }
 
 exports.getHotDeals = (req, res, next) => {
-    let data = dealabs.getHotDeals()
-  res.json(data)
+  dealabs.getHotDeals(LIMIT, (err, data) => {
+    if (err) {
+      res.json({ status: 500, message: err.message, data: null })
+    } else {
+      res.json({ status: 300, message: 'Success', data: data })
+    }
+  })
 }
 
 exports.getMostCommentedDeals = (req, res, next) => {
-    let data = dealabs.getMostCommentedDeals()
-  res.json(data)
+  dealabs.getMostCommentedDeals(LIMIT, (err, data) => {
+    if (err) {
+      res.json({ status: 500, message: err.message, data: null })
+    } else {
+      res.json({ status: 300, message: 'Success', data: data })
+    }
+  })
 }
