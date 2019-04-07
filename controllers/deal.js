@@ -5,10 +5,9 @@ exports.index = (req, res, next) => {
     let customLimit = typeof req.query.limit === 'undefined' ? DEFAULT_LIMIT : req.query.limit
     dealabs.getDeals(customLimit, (err, data) => {
       if (err) {
-        res.json({status: 500, message: err.message, data: null})
+        res.json(JSON.stringify({ "speech": err.message, "displayText": err.message }))
       } else {
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({ "speech": data[0]['title'], "displayText": data[0]['title']}))
+        res.json(JSON.stringify({ "speech": data[0]['title'], "displayText": data[0]['title']}))
         // res.json({ status: 300, message: 'Success', data: data })
       }
     })
