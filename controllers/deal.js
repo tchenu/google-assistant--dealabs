@@ -7,7 +7,7 @@ exports.index = (req, res, next) => {
       if (err) {
         res.json({status: 500, message: err.message, data: null})
       } else {
-        res.json({ 'speech': data[0]['title'], 'displayText': data[0]['title']})
+        res.json(JSON.stringify({ 'speech': data[0]['title'], 'displayText': data[0]['title']}))
         // res.json({ status: 300, message: 'Success', data: data })
       }
     })
