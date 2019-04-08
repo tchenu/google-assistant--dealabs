@@ -17,3 +17,8 @@ Cet API vous permet d'obtenir les derniers bons plans du site Dealabs.com et de 
 
 
 
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/thibeaultchenu/google-home-mini--dealabs/badge.svg?style=beer-square)](https://beerpay.io/thibeaultchenu/google-home-mini--dealabs)  [![Beerpay](https://beerpay.io/thibeaultchenu/google-home-mini--dealabs/make-wish.svg?style=flat-square)](https://beerpay.io/thibeaultchenu/google-home-mini--dealabs?focus=wish)
